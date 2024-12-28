@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your stay at Bettadakeshvi Homestay, a budget-friendly homestay located near Chikkamagaluru, Belur, Sakleshpur, and Mudigere. Enjoy traditional heritage, serene surroundings, and affordable pricing.">
+    <meta name="keywords" content="budget homestay, homestay near Chikkamagaluru, homestay near Belur, homestay near Sakleshpur, homestay near Mudigere, economic homestay, affordable homestay in Sakleshpur, homestay near Chikkamagaluru, peaceful retreat, traditional homestay">
+    <meta name="author" content="Bettadakeshvi Homestay">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Bettadakeshvi Homestay - Budget Homestay Near Sakleshpur, Chikkamagaluru, Belur, Mudigere">
+    <meta property="og:description" content="Book your stay at Bettadakeshvi Homestay, an affordable homestay near Chikkamagaluru, Belur, Sakleshpur, and Mudigere. Experience a peaceful and economic retreat.">
+    <meta property="og:image" content="URL_to_image.jpg"> <!-- Replace with your image URL -->
+    <meta property="og:url" content="https://www.bettadakeshvi.com/booking"> <!-- Your website URL -->
+    <meta property="og:type" content="website">
+    
+    <title>Booking Form - Budget Homestay Near Sakleshpur, Chikkamagaluru | Bettadakeshvi Homestay</title>
+
+    <!-- Structured Data Schema for Booking -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "HotelReservation",
+          "name": "Bettadakeshvi Homestay",
+          "url": "https://www.bettadakeshvi.com/booking",
+          "checkinDate": "2024-12-28", 
+          "checkoutDate": "2024-12-29",
+          "numberOfAdults": 2,
+          "priceCurrency": "INR",
+          "price": "1600",
+          "reservationStatus": "ReservationConfirmed"
+        }
+    </script>
+
+    <style>
+        /* Same styling as before */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        .back-button {
+            display: block;
+            margin-bottom: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .back-button:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 15px;
+                max-width: 400px;
+            }
+            .form-group button {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 10px;
+                max-width: 300px;
+            }
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 8px;
+                font-size: 12px;
+            }
+            .form-group button {
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <a href="index.html" class="back-button">&larr; Explore page</a>
+        <h1>Booking Form for Budget Homestay Near Sakleshpur</h1>
+        <form action="https://formspree.io/f/mrbbqolk" method="POST" onsubmit="return validateDates()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="checkin">Check-in Date:</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+                <label for="checkout">Check-out Date:</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="days">Number of Days:</label>
+                <select id="days" name="days" required>
+                    <option value="1">1 Day</option>
+                    <option value="2">2 Days</option>
+                    <option value="3+">3+ Days</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message (Optional):</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Confirm Booking</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Set today's date as the minimum Check-in date
+        const today = new Date().toISOString().split("T")[0];
+        document.getElementById("checkin").setAttribute("min", today);
+
+        // Validate that Check-out date is not earlier than Check-in date
+        function validateDates() {
+            const checkinDate = document.getElementById('checkin').value;
+            const checkoutDate = document.getElementById('checkout').value;
+
+            if (new Date(checkoutDate) < new Date(checkinDate)) {
+                alert("Check-out date cannot be earlier than Check-in date. Please select a valid Check-out date.");
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
+
