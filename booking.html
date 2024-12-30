@@ -208,10 +208,6 @@
                 <input type="number" id="guests" name="guests" min="1" required>
             </div>
             <div class="form-group">
-                <label for="days">Number of Days:</label>
-                <select id="days" name="days" required>
-                    <option value="1">1 Day</option>
-                </select>
                 <label for="coupon">Coupon Code (Optional):</label>
                 <input type="text" id="coupon" name="coupon">
             </div>
@@ -230,7 +226,7 @@
         const today = new Date().toISOString().split("T")[0];
         document.getElementById("checkin").setAttribute("min", today);
 
-        // Validate that Check-out date is not earlier than Check-in date
+        // Validate dates and coupon code
         function validateDates() {
             const checkinDate = document.getElementById('checkin').value;
             const checkoutDate = document.getElementById('checkout').value;
@@ -252,6 +248,7 @@
                 return false; // Prevent form submission if the coupon is invalid
             }
 
+            return true; // Allow form submission if all validations pass
         }
     </script>
 </body>
