@@ -10,8 +10,8 @@
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content="Bettadakeshvi Homestay - Budget Homestay Near Sakleshpur, Chikkamagaluru, Belur, Mudigere">
     <meta property="og:description" content="Book your stay at Bettadakeshvi Homestay, an affordable homestay near Chikkamagaluru, Belur, Sakleshpur, and Mudigere. Experience a peaceful and economic retreat.">
-    <meta property="og:image" content="URL_to_image.jpg"> <!-- Replace with your image URL -->
-    <meta property="og:url" content="https://www.bettadakeshvi.com/booking"> <!-- Your website URL -->
+    <meta property="og:image" content="bettadakeshvihomestay.jpg">
+    <meta property="og:url" content="https://www.bettadakeshvihomestay.com/booking">
     <meta property="og:type" content="website">
     
     <title>Booking Form - Budget Homestay Near Sakleshpur, Chikkamagaluru | Bettadakeshvi Homestay</title>
@@ -20,17 +20,66 @@
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
-          "@type": "HotelReservation",
-          "name": "Bettadakeshvi Homestay",
-          "url": "https://www.bettadakeshvi.com/booking",
-          "checkinDate": "2024-12-28", 
-          "checkoutDate": "2024-12-29",
-          "numberOfAdults": 2,
-          "priceCurrency": "INR",
-          "price": "1600",
-          "reservationStatus": "ReservationConfirmed"
+          "@graph": [
+            {
+              "@type": "LodgingBusiness",
+              "name": "Bettadakeshvi Homestay",
+              "description": "Bettadakeshvi Homestay offers a traditional heritage experience near Sakleshpur with amenities like a campfire, party hall, and delicious food.",
+              "url": "https://www.bettadakeshvihomestay.com",
+              "address":[ {
+                "@type": "PostalAddress",
+                "streetAddress": "Near Sakleshpur",
+                "addressLocality": "Sakleshpur",
+                "addressRegion": "Karnataka",
+                "postalCode": "573134",
+                "addressCountry": "IN"
+              },
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "near chikkamagaluru",
+                "addressLocality": "Chikkamagaluru",
+                "addressRegion": "Karnataka",
+                "postalCode": "577101",
+                "addressCountry": "IN"
+              },{
+                "@type": "PostalAddress",
+                "streetAddress": "bettadakeshvi, Coffee Estate",
+                "addressLocality": "Belur",
+                "addressRegion": "Karnataka",
+                "postalCode": "573115",
+                "addressCountry": "IN"
+              } ]
+
+              ,
+              "telephone": "+91-6361523626",
+              "priceRange": "₹1400 - ₹2000",
+              "amenityFeature": [
+                {"@type": "LocationFeatureSpecification", "name": "Campfire"},
+                {"@type": "LocationFeatureSpecification", "name": "Party Hall"},
+                {"@type": "LocationFeatureSpecification", "name": "Traditional Food"}
+              ],
+              "image": "https://www.bettadakeshvihomestay.com/assets/header-1.jpg",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "13.135278801727104",
+                "longitude": "75.77120519347937"
+              }
+            },
+            {
+              "@type": "HotelReservation",
+              "name": "Bettadakeshvi Homestay Reservation",
+              "url": "https://www.bettadakeshvihomestay.com/booking",
+              "checkinDate": "2024-12-31",
+              "checkoutDate": "2025-01-01",
+              "numberOfAdults": 5,
+              "priceCurrency": "INR",
+              "price": "8000",
+              "reservationStatus": "ReservationConfirmed"
+            }
+          ]
         }
     </script>
+        
 
     <style>
         /* Same styling as before */
@@ -132,7 +181,7 @@
 <body>
     <div class="form-container">
         <a href="index.html" class="back-button">&larr; Explore page</a>
-        <h1>Booking Form for Budget Homestay Near Sakleshpur</h1>
+        <h1>Bettadakeshvi Homestay Booking</h1>
         <form action="https://formspree.io/f/mrbbqolk" method="POST" onsubmit="return validateDates()">
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -162,9 +211,9 @@
                 <label for="days">Number of Days:</label>
                 <select id="days" name="days" required>
                     <option value="1">1 Day</option>
-                    <option value="2">2 Days</option>
-                    <option value="3+">3+ Days</option>
                 </select>
+                <label for="coupon">Coupon Code (Optional):</label>
+                <input type="text" id="coupon" name="coupon">
             </div>
             <div class="form-group">
                 <label for="message">Message (Optional):</label>
@@ -186,12 +235,23 @@
             const checkinDate = document.getElementById('checkin').value;
             const checkoutDate = document.getElementById('checkout').value;
 
+            // Validate check-in and check-out dates
             if (new Date(checkoutDate) < new Date(checkinDate)) {
                 alert("Check-out date cannot be earlier than Check-in date. Please select a valid Check-out date.");
                 return false; // Prevent form submission
             }
 
-            return true; // Allow form submission
+            // Validate coupon code
+            const coupon = document.getElementById("coupon").value.trim().toLowerCase();
+            const validCoupons = ["summer40", "discount40", "festive40"];
+
+            if (coupon && validCoupons.includes(coupon)) {
+                alert("You’ve received an additional 7% discount! Our team will contact you soon to finalize your booking.!!Note:please verify the number from the website contact section");
+            } else if (coupon) {
+                alert("Invalid coupon code. Please enter a valid coupon code.");
+                return false; // Prevent form submission if the coupon is invalid
+            }
+
         }
     </script>
 </body>
