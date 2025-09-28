@@ -298,6 +298,9 @@ nav {
   }
 
   .header__content {
+    margin-top: 2rem;     /* more push down */
+    margin-left: 0.5rem;  /* subtle left shift */
+    text-align: left;     /* optional */
     position: relative;
     padding-bottom: 10rem;
   }
