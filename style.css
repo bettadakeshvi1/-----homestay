@@ -344,8 +344,8 @@ nav {
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .header__content {
-    margin-top: 3rem;
-    margin-left: 0.8rem;
+    margin-top: 6rem;
+    margin-left: 0.5rem;
     text-align: left;
   }
 
